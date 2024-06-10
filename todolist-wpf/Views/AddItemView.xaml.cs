@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace todolist_wpf
+namespace todolist_wpf.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AddItemView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddItemView : UserControl
     {
-        public MainWindow()
+        public AddItemView()
         {
             InitializeComponent();
         }

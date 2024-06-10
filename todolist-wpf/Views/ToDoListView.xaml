@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="todolist_wpf.Views.ToDoListView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:todolist_wpf.Views" xmlns:vm="clr-namespace:todolist_wpf.ViewModels"
+        mc:Ignorable="d"
+        d:DataContext="{d:DesignInstance Type=vm:ToDoListViewModel}"
+        Height="450" Width="800">
+    <DockPanel>
+        <Button DockPanel.Dock="Bottom"
+                HorizontalAlignment="Stretch"
+                HorizontalContentAlignment="Center"
+                Command="{Binding Path=DataContext.AddItemCommand, RelativeSource={RelativeSource AncestorType={x:Type Window}}}">
+            Add Item
+        </Button>
+        <ItemsControl ItemsSource="{Binding ListItems}">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <CheckBox Margin="4"
+                              IsChecked="{Binding IsDone}"
+                              Content="{Binding Description}"/>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+    </DockPanel>
+</UserControl>
